@@ -1,0 +1,25 @@
+import sys
+import clr
+sys.path.append("C:\ETAS\INCA7.2\cebra")
+clr.AddReference("incacom")
+from de.etas.cebra.toolAPI.Inca import *
+from de.etas.cebra.toolAPI.Common import *
+a=Inca(True)
+myDB=a.GetCurrentDataBase()
+print a.APIVersion()
+print a.GetApplicationLanguage()
+print a.GetDataBasePath()
+print a.GetETASLogFilePath()
+print a.GetLicenseManager()
+print a.GetPollingCycleTimeTS()
+print a.GetRecordingFileFormatsInternal()
+print a.GetOpenedExperiment()
+print a.GetOpenedExperimentView()
+##print dir(myDB)
+##b=myDB.BrowseItem("Experiment_Dura_XCP_New")[0].OpenExperiment()
+b=a.GetOpenedExperiment()
+##c=b.GetAllMeasureElements()
+##print d=c[1].GetValue()
+##print d.Label()
+##f=b.GetAllCalibrationElements()
+##c=(i.Label for i in b.GetAllMeasureElements())
